@@ -51,6 +51,9 @@ const userSchema = Schema({
       link: {
         type: String,
       },
+      category: {
+        type: String,
+      },
       code: {
         type: String,
       },
