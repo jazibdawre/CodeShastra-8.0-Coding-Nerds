@@ -18,7 +18,6 @@ module.exports.signUp = (req,res,next) => {
             user.phoneNo = req.body.phoneNo
           }
           
-          console.log(user)
           user.save((err, user) => {
               if (err) {
                 res.statusCode = 500;
@@ -38,7 +37,6 @@ module.exports.signUp = (req,res,next) => {
 
 
 module.exports.logInEmail = (req,res,next) => {
-    console.log("Hello")
     passport.authenticate('local' , {session:false} , (err , user ,info) => {
         if(err){
             res.statusCode = 500;
@@ -121,7 +119,6 @@ module.exports.logInOTP = (req,res,next) => {
 
 
 module.exports.getAlluser = (req,res,next) => {
-    console.log("Hello")
     Users.find({} , (err,users) => {
         if(err){
             res.statusCode = 500;

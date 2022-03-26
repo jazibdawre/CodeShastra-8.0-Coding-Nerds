@@ -6,6 +6,7 @@ var logger = require('morgan');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var cors = require('cors')
+var cron = require("node-cron");
 require('dotenv').config()
 
 var indexRouter = require('./routes/index');
@@ -16,6 +17,7 @@ var app = express();
 const { verifyUser } = require('./authenticate');
 const otpRouter = require('./routes/otp');
 const bankRouter = require('./routes/bank');
+const { scrap } = require('./utils/scrapper');
 
 // Connection To MongoDB
 mongoose.connect(process.env.DB_URL , { useNewUrlParser: true , useUnifiedTopology: true } , (err) => {
@@ -44,6 +46,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/otp',otpRouter);
 app.use('/banks',bankRouter)
+
+// schedule 
+// cron.schedule("0 */2 * * *", () => {
+//   scrap();
+// });
 
 
 // catch 404 and forward to error handler

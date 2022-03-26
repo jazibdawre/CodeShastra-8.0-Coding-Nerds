@@ -7,7 +7,7 @@ const bankSchema = Schema({
         required: true,
     },
     coupons: [{
-        link: {
+        imgURL: {
             type: String
         },
         code: {
