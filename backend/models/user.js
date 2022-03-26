@@ -1,57 +1,81 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require('passport-local-mongoose');
+const passportLocalMongoose = require("passport-local-mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
-    phoneNo: {
+  phoneNo: {
+    type: Number,
+  },
+  fname: {
+    type: String,
+  },
+  lname: {
+    type: String,
+  },
+  transactions: [
+    {
+      title: {
+        type: String,
+        require: true,
+      },
+      price: {
         type: Number,
-    },
-    fname: {
+        require: true,
+      },
+      category: {
         type: String,
+        enum: ["Travel", "Electronics", "Finance", "E-Commerce"],
+        require: true,
+      },
     },
-    lname: {
+  ],
+  cards: [
+    {
+      bankName: {
         type: String,
+        require: true,
+      },
+      cardNumber: {
+        type: String,
+        require: true,
+      },
+      type: {
+        type: String,
+        require: true,
+        default: "Debit",
+      },
     },
-    cards: [{
-        bankName: {
-            type: String,
-            require: true,
-        },
-        cardNumber:{
-            type: String,
-            require: true
-        },
-        type: {
-            type: String,
-            require: true,
-            default: "Debit"
-        }
-    }],
-    coupons: [{
-        link: {
-            type: String
-        },
-        code: {
-            type: String
-        },
-        title: {
-            type: String
-        },
-        discount: {
-            type: Number
-        },
-        price: {
-            type: Number
-        },
-        description: {
-            type: String
-        },
-        expiry: {
-            type: Date
-        }
-    }]
-})
+  ],
+  coupons: [
+    {
+      link: {
+        type: String,
+      },
+      category: {
+        type: String,
+      },
+      code: {
+        type: String,
+      },
+      title: {
+        type: String,
+      },
+      discount: {
+        type: Number,
+      },
+      price: {
+        type: Number,
+      },
+      description: {
+        type: String,
+      },
+      expiry: {
+        type: Date,
+      },
+    },
+  ],
+});
 
-userSchema.plugin(passportLocalMongoose)
+userSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("User" , userSchema);
+module.exports = mongoose.model("User", userSchema);
