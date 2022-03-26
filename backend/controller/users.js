@@ -121,6 +121,20 @@ module.exports.logInOTP = (req, res, next) => {
   }
 };
 
+module.exports.getUser = (req,res, next) => {
+    Users.findById(req.user._id,(err,user) => {
+        if (err) {
+            res.statusCode = 500;
+            res.setHeader("Content-Type", "application/json");
+            res.json({ success: false, status: "Bad Request" });
+        } else {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json");
+            res.json({ success: true, user: user });
+          }    
+    })
+}
+
 module.exports.getAlluser = (req, res, next) => {
   console.log("Hello");
   Users.find({}, (err, users) => {

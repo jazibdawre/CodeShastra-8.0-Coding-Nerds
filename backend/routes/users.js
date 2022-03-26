@@ -6,10 +6,11 @@ const path = require('path');
 
 const userRouter = express.Router();
 
-const { signUp, logInEmail, logInOTP, updateUser, getAlluser, deleteAll, deleteOne } = require('../controller/users');
+const { signUp, logInEmail, logInOTP, updateUser, getAlluser, deleteAll, deleteOne, getUser } = require('../controller/users');
 const { addCards, deleteAllCards, deleteCard, getAllCards, getCard } = require('../controller/cards');
 
 userRouter.get('/all',  verifyUser, getAlluser)
+userRouter.get('/me',  verifyUser, getUser)
 userRouter.post('/signUp', signUp)
 userRouter.post('/login/email', logInEmail)
 userRouter.post('/login/otp', logInOTP)
