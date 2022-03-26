@@ -1,13 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {useState} from 'react';
-import {Redirect,Link} from 'react-router-dom';
+import {Redirect,Link,useHistory} from 'react-router-dom';
 import Button from '../components/common/Button';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CreditCardInput from 'react-credit-card-input';
 import Card from "react-credit-cards";
 import Grid from '@material-ui/core/Grid';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,9 +48,11 @@ function Register() {
     number:""
   })
 
+  const history=useHistory();
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
   }
+
 
   const handleSubmit=async ()=>{
     const {name,email,password}=formData;
@@ -103,7 +106,8 @@ function Register() {
             onChange={(e)=>handleChange(e)}
             required
           />   
-          <Grid container>
+      
+          {/* <Grid container>
             <Grid item xs={6}>
                 <Card
                 number="1234567894223343"
@@ -122,10 +126,10 @@ function Register() {
                 className={classes.inputs}
                 />
             </Grid>
-          </Grid>
+          </Grid> */}
            <div style={{marginTop:'40px'}}></div>
         </form>
-        <Button buttonText="Register" onClick={handleSubmit} />
+        <Button buttonText="Next" onClick={()=>history.push('/card')} />
       </div>
     </React.Fragment>
   );

@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import {useState} from 'react';
 import {Redirect,Link} from 'react-router-dom';
 import Button from '../components/common/Button';
-
+import OtpInput from 'react-otp-input';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +39,7 @@ function Login() {
     email:'',
     password:'',
   })
+  const [otp,setOtp]=useState();
 
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
@@ -77,6 +78,27 @@ function Login() {
             required
           />        
         </form>
+        {/* <OtpInput
+          value={otp}
+          onChange={(e)=>setOtp(e.target.value)}
+          numInputs={4}
+          separator={<span>-</span>}
+          inputStyle={{
+            margin: "0px",
+            textAlign: "center",
+            lineHeight: "30px",
+            fontSize: "30px",
+            border: "solid 1px #10293C",
+            boxShadow: "0 0 5px #10293C inset",
+            outline: "none",
+            width: "60%",
+            transition: "all .2s ease-in-out",
+            borderRadius: "3px",
+            backgroundColor:"transparent",
+            padding:"2%",
+            color:"orange"
+        }}
+        /> */}
         <Button buttonText="Login" onClick={handleSubmit} />
       </div>
     </React.Fragment>
