@@ -2,6 +2,28 @@ const Users = require("../models/user");
 const OTP = require("../models/otp");
 const passport = require("passport");
 const { getJWT } = require("../authenticate");
+const Bank = require('../models/bank')
+
+module.exports.getAllCoupons = async (req,res,next) => {
+  let companies = []
+  let coupons = req.user.coupons
+  req.user.cards.map(card => {
+    if(!companies.includes(card.bankName)){
+      companies.push(card.bankName)
+    }
+  })
+  
+  for (let i = 0 ; i < companies.length ; i++){
+    let bank = await Bank.findOne({name:companies[i]})
+    coupons = [...coupons , ...bank.coupons]
+  }
+
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "application/json");
+  res.json({ success: true, status: "Fetched Coupons !!", coupons:coupons});
+  return;
+
+}
 
 module.exports.signUp = (req, res, next) => {
   Users.register({ username: req.body.username }, req.body.password, (err, user) => {
@@ -18,7 +40,6 @@ module.exports.signUp = (req, res, next) => {
         user.phoneNo = req.body.phoneNo;
       }
 
-      console.log(user);
       user.save((err, user) => {
         if (err) {
           res.statusCode = 500;
@@ -26,9 +47,11 @@ module.exports.signUp = (req, res, next) => {
           res.json({ success: false, status: "Registration Unsuucessfull !!", err: err });
           return;
         } else {
+          console.log(user);
+          console.log(user._id)
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json({ success: true, status: "Registration Suucessfull !!", user: user });
+          res.json({ success: true, status: "Registration Suucessfull !!", token: getJWT(user._id), user: user });
           return;
         }
       });

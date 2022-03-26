@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-credit-cards";
-
+import {Redirect,Link,useHistory} from 'react-router-dom';
 
 // import SupportedCards from "./Cards";
 
@@ -12,6 +12,7 @@ import {
 } from "./utils";
 
 import "react-credit-cards/es/styles-compiled.css";
+import { addUserCard } from "../apis/user";
 
 export default class App extends React.Component {
   state = {
@@ -48,19 +49,21 @@ export default class App extends React.Component {
     this.setState({ [target.name]: target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
+
+    let obj = {}
+    obj.bankName = "ICICI"
+    obj.cardNumber = this.state.number
+    obj.type = "Debit"
+    obj.expiry = this.state.expiry
+    obj.cvv = this.state.cvc
+
+    console.log(obj)
     
-    const { issuer } = this.state;
-    const formData = [...e.target.elements]
-      .filter(d => d.name)
-      .reduce((acc, d) => {
-        acc[d.name] = d.value;
-        return acc;
-      }, {});
-    console.log(formData);
-    this.setState({ formData });
-    this.form.reset();
+    await addUserCard(obj)
+
+    window.open('/dashboard',"_blank")
   };
 
   render() {

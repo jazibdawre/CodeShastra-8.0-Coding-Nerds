@@ -22,47 +22,38 @@ export const loginEmail = async(formData) => {
     }
 }
 
-export const registerEmail = async(formData) => {
+export const registerUser = async(formData) => {
     const config = {
         headers: {
           'Content-Type': 'application/json',
         },
     }
-    const obj = { 
-        phoneNo: formData.phoneNo,
-        fname: formData.fname,
-        lname: formData.lname,
-        username: formData.username,
-        password: formData.username
-    }
-    console.log(obj)
+    console.log(formData)
     const { data } = await axios.post(
         baseUrl + '/users/signUp', 
-        obj, 
+        formData, 
         config
     )
     if(data.err){
         console.log(data.err)
     }else{
-        console.log("User Logged In Sucessfully!!")
+        console.log("User Register Sucessfully!!")
+        localStorage.setItem('userInfo', JSON.stringify(data))
     }
 }
 
 export const addUserCard = async(formData) => {
+    console.log('Bearer ' + JSON.parse(localStorage.getItem('token')))
     const config = {
         headers: {
           'Content-Type': 'application/json',
+          'Authorization' : 'Bearer ' + JSON.parse(localStorage.getItem('userInfo')).token
         },
     }
-    const obj = { 
-        bankName: "ICICI",
-        cardNumber: "",
-        type: "Debit"
-    }
-    console.log(obj)
+    
     const { data } = await axios.put(
         baseUrl + '/users/cards/add', 
-        obj, 
+        {cards: [formData]}, 
         config
     )
     if(data.err){

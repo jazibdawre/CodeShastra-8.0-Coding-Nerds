@@ -44,11 +44,17 @@ const userSchema = Schema({
         require: true,
         default: "Debit",
       },
+      expiry:{
+        type: String,
+      },
+      cvv:{
+        type: String,
+      }
     },
   ],
   coupons: [
     {
-      link: {
+      imgUrl: {
         type: String,
       },
       category: {
