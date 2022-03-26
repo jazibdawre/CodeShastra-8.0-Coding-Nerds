@@ -23,11 +23,7 @@ const Header = () => {
         </div>
       </div>
       <div className="max-width flex header">
-        <img
-          src="https://web-images.credcdn.in/_next/assets/images/home-page/cred-logo.png"
-          className="header-logo"
-          alt="cred"
-        />
+           <h1 style={{color:"orange"}}>ZEPP</h1>
         <div className="only-mobile mobile-menu-button-wrapper">
           <button
             class={`hamburger hamburger--spin ${

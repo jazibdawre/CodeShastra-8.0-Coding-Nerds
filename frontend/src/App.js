@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
+import Profile from "./pages/Profile";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path='/register' component={Register} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/analytics' component={Analytics} />
+          <Route exact path='/me' component={Profile} />
        </>
 
   );

@@ -3,32 +3,32 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 const pdata = [
     {
       name: 'Entertainment',
-      student: 13,
+      money: 13,
       fees: 10
     },
     {
       name: 'Medication',
-      student: 15,
+      money: 15,
       fees: 12
     },
     {
       name: 'Investment',
-      student: 5,
+      money: 5,
       fees: 10
     },
     {
       name: 'Essentials',
-      student: 10,
+      money: 10,
       fees: 5
     },
     {
       name: 'Fashion',
-      student: 9,
+      money: 9,
       fees: 4
     },
     {
       name: 'E-commerce',
-      student: 10,
+      money: 10,
       fees: 8
     },
   ];
@@ -36,6 +36,7 @@ const pdata = [
 function Analytics() {
   return (
     <React.Fragment>
+      <h1 style={{textAlign:'center',color:"orange",marginTop:"10px"}}>Your Analytics</h1>
       <ResponsiveContainer width="100%" aspect={3}>
         <AreaChart
           width={500}
@@ -51,7 +52,7 @@ function Analytics() {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Area dataKey="temperature" stroke="#FFA500" fill="#FFA500" />
+          <Area dataKey="money" stroke="#FFA500" fill="#FFA500" />
           <Tooltip />
           <Legend />
           <Area type="monotone" dataKey="student" stroke="#8884d8" fill="#8884d8" />
