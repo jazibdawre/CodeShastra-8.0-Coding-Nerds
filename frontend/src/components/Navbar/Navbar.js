@@ -43,7 +43,10 @@ export default function MenuAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const handleLogout=()=>{
+    localStorage.removeItem('userInfo');
+    history.push('/');
+  }
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{backgroundColor:'black',color:"orange",border:'orange'}}>
@@ -82,6 +85,8 @@ export default function MenuAppBar() {
               >
                 <MenuItem onClick={()=>history.push('/me')}>Profile</MenuItem>
                 <MenuItem onClick={()=>history.push('/analytics')}>Analytics</MenuItem>
+                <MenuItem>Add Cards</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </div>
           )}
