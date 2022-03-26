@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {Redirect,Link,useHistory} from 'react-router-dom';
 import Button from '../components/common/Button';
 import {loginEmail} from '../apis/user'
+// import OtpInput from 'react-otp-input';
 
 const useStyles = makeStyles((theme) => ({
   root: {
