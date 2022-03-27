@@ -48,7 +48,7 @@ function Login() {
   const handleSubmit=async ()=>{
     const {username,password}=formData;
     console.log(formData)
-    loginEmail(formData)
+    await loginEmail(formData)
     setFormData({
       email:'',
       password:'',

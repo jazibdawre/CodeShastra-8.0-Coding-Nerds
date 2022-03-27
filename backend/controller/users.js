@@ -18,6 +18,8 @@ module.exports.getAllCoupons = async (req,res,next) => {
     coupons = [...coupons , ...bank.coupons]
   }
 
+  console.log(coupons)
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.json({ success: true, status: "Fetched Coupons !!", coupons:coupons});

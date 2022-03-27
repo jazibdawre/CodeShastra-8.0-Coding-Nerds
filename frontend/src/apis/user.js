@@ -18,7 +18,7 @@ export const loginEmail = async(formData) => {
         console.log(data.err)
     }else{
         console.log("User Logged In Sucessfully!!")
-        localStorage.setItem('userInfo', JSON.stringify(data))
+        await localStorage.setItem('userInfo', JSON.stringify(data))
     }
 }
 
