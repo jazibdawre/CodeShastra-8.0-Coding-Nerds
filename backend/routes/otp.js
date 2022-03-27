@@ -7,35 +7,11 @@ const otpRouter = express.Router();
 otpRouter.post('/generateOTP', (req,res,next) => {
     if(req.body.phoneNo){
         const generator = async function generateOTP(){
-            const msg = "Login"
+            const msg = "&You have been sent a coupoun for Rs. "+ req.body.amount + " by " + req.user.fname + "\nCoupoun Code: " + req.body.couponCode + "\nThanks and Regards\nTeam Coding Nerds"
             const otp = await sendOTP(msg , req.body.phoneNo);
-            if(otp){
-                Otps.deleteOne({phoneNo:req.body.phoneNo} , (err , resp) => {
-                    if(err){
-                        res.statusCode = 500;
-                        res.json({err:err})
-                    }
-                })
-                Otps.create({
-                    phoneNo:req.body.phoneNo,
-                    otp: otp
-                } , (err , otpDoc) => {
-                    if(err){
-                        res.statusCode = 500;
-                        res.setHeader('Content-Type','application/json');
-                        res.json({success:false , status:"Bad Request" , err:err})
-                    }else{
-                        let phoneNo = req.body.phoneNo + ""
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type','application/json');
-                        res.json({success:true ,status:"Request Successfull" , msg:"OTP send to XXXXX " + phoneNo.substring(6,10)})  
-                    }
-                })
-            }else{
-                res.statusCode = 500;
-                res.setHeader('Content-Type','application/json');
-                res.json({success:false , status:"OTP Registration Failed !!"})
-            }
+            res.statusCode = 200;
+            res.setHeader('Content-Type','application/json');
+            res.json({success:true , status:"Verified" , msg:"Number Verfied Successfully!!"})  
         }
         generator()
     }else{
