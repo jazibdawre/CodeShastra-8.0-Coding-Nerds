@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
 import Profile from "./pages/Profile";
 import CardDetails from "./pages/CardDetails";
-
+import ExpenseTracker from './pages/ExpenseTracker/App'
 
 const App = () => {
   return (
@@ -19,6 +19,8 @@ const App = () => {
           <Route exact path='/analytics' component={Analytics} />
           <Route exact path='/me' component={Profile} />
           <Route exact path='/card' component={CardDetails} />
+          <Route exact path='/expense-tracker' component={ExpenseTracker} />
+        
        </>
 
   );

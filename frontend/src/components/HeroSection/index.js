@@ -6,10 +6,10 @@ const HeroSection = () => {
   return (
     <div className="hero-section-wrapper">
       <div className="flex flex-col absolute-center hero-section max-width">
-        <div className="hero-heading">
+        <div className="hero-heading" style={{color:"white"}}>
           Your Ultimate Rewards App
         </div>
-        <div className="hero-subheading">
+        <div className="hero-subheading" style={{color:'white'}}>
           join 7.5M+ members who win rewards and cashbacks everyday
         </div>
         <Button buttonText="Login" />
