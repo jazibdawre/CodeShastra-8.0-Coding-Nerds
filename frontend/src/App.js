@@ -8,6 +8,7 @@ import Analytics from "./pages/Analytics";
 import Profile from "./pages/Profile";
 import CardDetails from "./pages/CardDetails";
 import ExpenseTracker from './pages/ExpenseTracker/App'
+import Donate from "./pages/Donate";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path='/me' component={Profile} />
           <Route exact path='/card' component={CardDetails} />
           <Route exact path='/expense-tracker' component={ExpenseTracker} />
+          <Route exact path='/donate' component={Donate} />
         
        </>
 

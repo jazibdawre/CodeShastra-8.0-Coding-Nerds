@@ -9,7 +9,7 @@ const Users = require('./models/user');
 module.exports.localPassport = passport.use(new localStrategy(Users.authenticate()));
 
 module.exports.getJWT = (jwt_payload) => {
-    return jwt.sign({_id: jwt_payload} , process.env.SECRET_KEY , {expiresIn:3600});
+    return jwt.sign({_id: jwt_payload} , process.env.SECRET_KEY , {expiresIn:36000});
 }
 
 module.exports.verifyToken = (token) => {
