@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="hero-subheading">
           join 7.5M+ members who win rewards and cashbacks everyday
         </div>
-        <Button buttonText="Login" />
+        <Button buttonText="Login" onClick={()=>window.open("/login","_blank")}/>
       </div>
     </div>
   );

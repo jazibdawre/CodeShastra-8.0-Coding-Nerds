@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
     '&:hover': {
       transform: 'scale(1.1)',
     },
+    boxShadow: '2px 6px 15px 2px white'
   },
   card: ({ color }) => ({
     minWidth: 256,
@@ -72,181 +73,42 @@ const data =  [
           "category": "Electronics",
           "price": 1000,
           "description": "Get flat ₹1,000 off on home appliances Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
+          "expiry": "2022-03-30",
           "_id": "623f62404a4c3437a9b0e1ab"
       },
       {
           "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/debit-card/trendy-wednesday-offer-new-t.jpg",
-          "title": "Everyday Delights Trendy Wednesdays Offer on Flipkart",
+          "title": "Trendy Wednesdays on Flipkart",
           "discount": 10,
           "category": "E-Commerce",
           "price": null,
-          "description": "Everyday Delights Trendy Wednesdays Offer Use ICICI Bank Credit/Debit Card or Pockets",
+          "description": "Everyday Delights Trendy Wednesdays Use ICICI Bank Credit/Debit Card or Pockets",
           "expiry": "2022-03-29T18:30:00.000Z",
           "_id": "623f62404a4c3437a9b0e1ac"
       },
       {
           "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/debit-card/travel-monday-offer-t.jpg",
-          "title": "MakeMyTrip App Travel Mondays Offer",
+          "title": "MakeMyTrip App Travel Mondays",
           "code": "FLYMON",
           "discount": null,
           "category": "Travel",
           "price": null,
           "description": "MakeMyTrip Mondays Cashback Offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
+          "expiry": "2022-03-30",
           "_id": "623f62404a4c3437a9b0e1ad"
       },
       {
           "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/triple-rewarding-weekend-offer/triple-rewarding-weekend-offer-t.jpg",
-          "title": "Weekend Specials Offer",
+          "title": "Weekend Specials Offer!",
           "code": "ICICIEMI",
           "discount": null,
           "category": "Finance",
           "price": null,
           "description": "Weekend Specials Offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
+          "expiry": "2022-03-30",
           "_id": "623f62404a4c3437a9b0e1ae"
       },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/green-tuesday-offer/green-tuesday-offer-t.jpg",
-          "title": "Everyday Delights Green Tuesdays Offer",
-          "code": "ICICIGTMAR2",
-          "discount": null,
-          "category": "E-Commerce",
-          "price": null,
-          "description": "Everyday Delights Green Tuesdays Offer Use ICICI Bank Credit/Debit Card or Pockets",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1af"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/vivo-phones-cashback-offer-t.jpg",
-          "title": "Vivo Phones Offer - Get Up To Rs 3500 Cashback",
-          "discount": null,
-          "category": "Electronics",
-          "price": 3500,
-          "description": "Vivo Phones offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b0"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-card/oppo-phones-offer-t.jpg",
-          "title": "OPPO phone offer – Get up to Rs 2,500/- cashback",
-          "discount": null,
-          "category": "Electronics",
-          "price": 3000,
-          "description": "OPPO Phones Offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b1"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/whirlpool-emi-offer-thumbnail.jpg",
-          "title": "Whirlpool Offer - Get Up to 15% Cashback",
-          "discount": 15,
-          "category": "Electronics",
-          "price": null,
-          "description": "Whirlpool Offer - Get 15% cashback up to Rs. 7,500 Use ICICI Bank Credit and Debit Card EMI transactions",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b2"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/electro-thrusday-offer/electro-croma-thrusday-offer-t.jpg",
-          "title": "Everyday Delights Electro Offer",
-          "discount": null,
-          "category": "E-Commerce",
-          "price": 1000,
-          "description": "Get flat ₹1,000 off on home appliances Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b3"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/debit-card/travel-monday-offer-t.jpg",
-          "title": "MakeMyTrip App Travel Mondays Offer",
-          "code": "FLYMON",
-          "discount": null,
-          "category": "Travel",
-          "price": null,
-          "description": "MakeMyTrip Mondays Cashback Offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b4"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-card/emi-credit-card-sony-cashback-offer-t.jpg",
-          "title": "Get up to 10% cashback up to Rs.20000 on TV.",
-          "discount": 10,
-          "category": "Electronics",
-          "price": null,
-          "description": "Get up to 10% cashback up to Rs. 20,000 - Sony EMI offer",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b5"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-card/samsung-cashback-offer-t1.jpg",
-          "title": "Samsung offer – Get Up to 22.5% Cashback",
-          "discount": 25,
-          "category": "Electronics",
-          "price": null,
-          "description": "Get Up To 22.5% Cashback Pay using ICICI Bank Credit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b6"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/ifb-appliances-offer-t.jpg",
-          "title": "IFB appliances EMI offer",
-          "discount": 10,
-          "category": "E-Commerce",
-          "price": null,
-          "description": "Get 10% cashback on select IFB appliances Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b7"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-card/lg-products-offer-t.jpg",
-          "title": "Get Up To 20% Cashback on select LG products",
-          "category": "Electronics",
-          "price": null,
-          "description": "Get up to 20% cashback on LG products cashback on LG products",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b8"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/net-banking/byju-offer-t.jpg",
-          "title": "BYJU'S Offer",
-          "discount": null,
-          "category": "Finance",
-          "description": "Avail of no cost* EMI on BYJU’s courses Pay using ICICI Bank Credit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1b9"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-card/panasonic-ac-offer-t.jpg",
-          "title": "Panasonic EMI offer",
-          "discount": 20,
-          "category": "Finance",
-          "price": null,
-          "description": "Get 20% cashback - Panasonic Air Conditioner Offer",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1ba"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/flipkart-boss-offer-t.jpg",
-          "title": "Flat 30% off on Clear Tax",
-          "discount": 30,
-          "category": "Finance",
-          "price": null,
-          "description": "Flat 30% off on Clear Tax Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-03-30T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1bb"
-      },
-      {
-          "imgURL": "https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/Reliance-digital-banner-t.jpg",
-          "title": "Reliance Digital Offer - Get 10% Cashback on your purchases",
-          "discount": 10,
-          "category": "Finance",
-          "price": null,
-          "description": "Get 10% Cashback on Reliance Digital Offer Pay using ICICI Bank Credit or Debit Card",
-          "expiry": "2022-06-29T18:30:00.000Z",
-          "_id": "623f62404a4c3437a9b0e1bc"
-      }
+    
   ]
 
 const CustomCard = ({ classes, image, title, subtitle, price, expiry }) => {
@@ -260,6 +122,7 @@ const CustomCard = ({ classes, image, title, subtitle, price, expiry }) => {
             {title}
           </Typography>
           <Typography className={classes.subtitle}>{subtitle}</Typography>
+          <br></br>
           <Typography className={classes.price}>{price}</Typography>
           <Typography className={classes.expiry}>{expiry}</Typography>
         </CardContent>
@@ -278,46 +141,55 @@ export const Recommend = React.memo(function SolidGameCard({type}) {
     return (
       <>
         <Grid classes={gridStyles} container spacing={4} wrap={'nowrap'}>
+          
           <Grid item>
             <CustomCard
               classes={styles}
-              title={'Everyday Delights Electro Offer'}
-              subtitle={'Get flat ₹1,000 off on home appliances Pay using ICICI Bank Credit or Debit Card'}
+              title={data[0].title}
+              subtitle={data[0].description}
               image={
-                'https://www.icicibank.com//managed-assets/images/offer-zone/credit-debit-card/electro-thrusday-offer/electro-croma-thrusday-offer-t.jpg'
+                data[0].imgURL
               }
-              price={'₹1000'}
-              expiry={'Mar 30, 2022'}
+              price={data[0].price+'₹'}
+              expiry={data[0].expiry}
             />
           </Grid>
           <Grid item>
             <CustomCard
               classes={styles2}
-              title={'Fortnite'}
-              subtitle={'Time to choose side!'}
+              title={data[1].title}
+              subtitle={data[1].description}
               image={
-                'https://progameguides.com/wp-content/uploads/2019/10/fortnite-outfit-scratch.jpg'
+                data[1].imgURL
               }
+              price={data[1].discount+'%'}
+              expiry={data[1].expiry}
             />
           </Grid>
           <Grid item>
             <CustomCard
               classes={styles3}
-              title={'Overwatch'}
-              subtitle={'What are you waiting?'}
-              image={'https://images5.alphacoders.com/690/thumb-1920-690653.png'}
+              title={data[2].title}
+              subtitle={data[2].description}
+              image={
+                data[2].imgURL
+              }
+              price={data[2].code}
+              expiry={data[2].expiry}
             />
           </Grid>
           <Grid item>
             <CustomCard
               classes={styles4}
-              title={'PUBG'}
-              subtitle={'Are you ready?'}
+              title={data[3].title}
+              subtitle={data[3].description}
               image={
-                'https://www.itp.net/public/styles/full_img_sml/public/images/2019/05/27/44485-pubg_base1.jpg?itok=EF911Xan'
+                data[3].imgURL
               }
+              price={data[3].code}
+              expiry={data[3].expiry}
             />
-          </Grid>     
+          </Grid>
         </Grid>
       </>
     );

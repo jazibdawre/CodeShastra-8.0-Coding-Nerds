@@ -19,7 +19,7 @@ const FeelSpecial = () => {
             <div className="photo-section-description">
               every time you use our App, you receive
               ZEPP  coins. you can use these to win exclusive rewards or get
-              special access to curated products and experiences. on CRED, good
+              special access to curated products and experiences. on Zepp, good
               begets good.
             </div>
             <div className="photo-section-button">
