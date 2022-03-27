@@ -48,11 +48,11 @@ const ProductShowcase = () => {
             className="showcase-ui showcase-mockup-2"
           />
           <img
-            src="https://web-images.credcdn.in/_next/assets/images/home-page/phone/center.png"
-            className="showcase-ui showcase-mockup-3"
-          />
-          <img
             src="https://web-images.credcdn.in/_next/assets/images/home-page/phone/right-1.png"
+            className="showcase-ui showcase-mockup-3"
+            />
+          <img
+            src="https://web-images.credcdn.in/_next/assets/images/home-page/phone/center.png"
             className="showcase-ui showcase-mockup-4"
           />
           <img

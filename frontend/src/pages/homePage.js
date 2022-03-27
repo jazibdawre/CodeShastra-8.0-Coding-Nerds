@@ -27,7 +27,6 @@ const HomePage = () => {
       </div>
       <CredSecurity />
       <CredStory />
-      <AppRating />
       <Footer />
     </>
   );

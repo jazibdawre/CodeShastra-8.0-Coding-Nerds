@@ -8,6 +8,7 @@ import PhoneInput from 'react-phone-number-input'
 import CreditCardInput from 'react-credit-card-input';
 import Card from "react-credit-cards";
 import Grid from '@material-ui/core/Grid';
+import {registerUser} from '../apis/user'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,8 +55,24 @@ function Register() {
   }
 
 
-  const handleSubmit=async ()=>{
-    const {name,email,password}=formData;
+  const handleSubmit= async ()=>{
+    const {name,email,password,number}=formData;
+    let obj = {
+      phoneNo: number,
+        fname: name.split(' ')[0],
+        lname: name.split(' ')[1],
+        username: email,
+        password: password
+    }
+    console.log(obj)
+    await registerUser(obj)
+    setFormData({
+      name:'',
+      email:'',
+      password:'',
+      number:""
+    })
+    history.push('/card')
   }
   function handleCardNumberChange(e) {
       setCardNumber(e.target.value);
@@ -71,6 +88,7 @@ function Register() {
 
   return (
     <React.Fragment>
+      {localStorage.getItem('userInfo') ? <Redirect to='/dashboard' /> :
       <div className={classes.root}>
         <h1 className={classes.heading}>Register</h1>
         <form className={classes.form} >
@@ -129,8 +147,8 @@ function Register() {
           </Grid> */}
            <div style={{marginTop:'40px'}}></div>
         </form>
-        <Button buttonText="Next" onClick={()=>history.push('/card')} />
-      </div>
+        <Button buttonText="Register" onClick={()=>{handleSubmit()}} />
+      </div>}
     </React.Fragment>
   );
 }
