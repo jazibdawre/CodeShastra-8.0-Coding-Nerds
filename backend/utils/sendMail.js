@@ -1,6 +1,6 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-const sendMail = (name, email) => {
+const sendMail = (coupon, amount, name, email, res) => {
   const mailer = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,17 +12,18 @@ const sendMail = (name, email) => {
   const mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: email,
-    subject: "Registeration Successful",
-    html: "Hello " + name + ", Thank you for registering with us!.",
+    subject: "You're Welcome 🎁",
+    html: "You have been gifted a coupon code " + coupon + " for " + amount + " by " + name,
   };
 
   mailer.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.log(error);
-      res.status(400);
-      throw new Error("Email Invalid");
+      return res.sendStatus(400);
+    } else {
+      return res.sendStatus(200);
     }
   });
 };
 
-export default sendMail;
+module.exports = sendMail;

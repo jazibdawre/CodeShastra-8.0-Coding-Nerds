@@ -17,7 +17,7 @@ var app = express();
 const { verifyUser } = require("./authenticate");
 const otpRouter = require("./routes/otp");
 const bankRouter = require("./routes/bank");
-const { scrap } = require("./utils/scrapper");
+// const { scrap } = require("./utils/scrapper");
 
 // Connection To MongoDB
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
