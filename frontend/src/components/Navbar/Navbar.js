@@ -87,6 +87,7 @@ export default function MenuAppBar() {
                 <MenuItem onClick={()=>history.push('/me')}>Profile</MenuItem>
                 <MenuItem onClick={()=>history.push('/analytics')}>Analytics</MenuItem>
                 <MenuItem onClick={()=>history.push('/expense-tracker')}>Expense Tracker</MenuItem>
+                <MenuItem onClick={()=>history.push('/donate')}>Gift a Coupon</MenuItem>
                 <MenuItem>Add Cards</MenuItem>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
