@@ -21,18 +21,19 @@ const getAndroidPrefix = () => {
 };
 const AppRating = () => {
   return (
-    <div className="max-width app-rating flex">
+    <div className="max-width app-rating flex" style={{color:"white"}}>
       <div className="flex app-rating-block flex-col">
-        <div className="flex">
+        <div>
           <div className="app-rating-value flex flex-col">
             4.8
+            <div style={{marginTop:'10px'}}></div>
             <img
               src="https://web-images.credcdn.in/_next/assets/images/home-page/rating-ios.png"
               className="app-rating-stars"
             />
           </div>
           <div className="app-rating-platform">
-            app <br /> store
+            app store
           </div>
         </div>
         <div className="non-mobile">
@@ -44,16 +45,17 @@ const AppRating = () => {
         </div>
       </div>
       <div className="flex app-rating-block flex-col">
-        <div className="flex">
+        <div>
           <div className="app-rating-value flex flex-col">
             4.7
+            <div style={{marginTop:"10px"}}></div>
             <img
               src="https://web-images.credcdn.in/_next/assets/images/home-page/rating-android.png"
               className="app-rating-stars"
             />
           </div>
           <div className="app-rating-platform">
-            play <br /> store
+            play store
           </div>
         </div>
         <div className="non-mobile">
